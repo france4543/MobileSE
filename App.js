@@ -1,21 +1,75 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,TouchableOpacity, Text,Button, View,SafeAreaView, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import SelectDistrictScreen from "./screens/selectdistrict";
+import HomeScreen from './screens/home';
+import MueangList from './screens/district/mueanglist'
+
+const Stack = createStackNavigator();
+
+
+
+const Navigation = () => (
+  <NavigationContainer>
+    <Stack.Navigator
+  initialRouteName="HomeScreen"
+  screenOptions ={
+    {
+      headerStyle:{
+        backgroundColor:'white',
+        shadowOpacity: 0
+      },
+      headerTintColor:'black'
+    }
+  
+  }
+  >
+      <Stack.Screen
+        name="พะเยาเฮาม่วน"
+        component={HomeScreen}
+        options={
+          {
+            title:null,
+            headerTruncatedBackTitle: null
+        
+          }
+}
+        />
+      
+      <Stack.Screen
+        name="SelectDistrict"
+        component={SelectDistrictScreen}
+      />
+
+      
+      <Stack.Screen
+        name="MueangList"
+        component={MueangList}
+      />
+
+
+      
+    </Stack.Navigator>
+  </NavigationContainer>
+)
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    
+    <SafeAreaView style={styles.container}>
+      <Navigation />
+    </SafeAreaView>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
 });
