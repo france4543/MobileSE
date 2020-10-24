@@ -10,7 +10,7 @@ const SelectDistrict = ({navigation}) => {
 
   const setandgopage = (value) => {
       setSelectedValue(value)
-      navigation.navigate("MueangList",{ "namemeung":value })
+      navigation.navigate("District",{ "Amphoe":value })
   }
   return (
 
@@ -25,15 +25,15 @@ const SelectDistrict = ({navigation}) => {
         }
       >
         <Picker.Item enabled={false} label="เลือกอำเภอ" value="selectam" />
-        <Picker.Item label="เมืองพะเยา" value="mueang" />
-        <Picker.Item label="ดอกคำใต้" value="dokkhamtai" />
-        <Picker.Item label="ภูกามยาว" value="phukamyao" />
-        <Picker.Item label="แม่ใจ" value="maechai" />
-        <Picker.Item label="จุน" value="chun" />
-        <Picker.Item label="เชียงคำ" value="ChiangKham" />
-        <Picker.Item label="ปง" value="pong" />
-        <Picker.Item label="ภูซาง" value="phusang" />
-        <Picker.Item label="เชียงม่วน" value="chiangmuan" />
+        <Picker.Item label="เมืองพะเยา" value="1" />
+        <Picker.Item label="ดอกคำใต้" value="6" />
+        <Picker.Item label="ภูกามยาว" value="9" />
+        <Picker.Item label="แม่ใจ" value="8" />
+        <Picker.Item label="จุน" value="5" />
+        <Picker.Item label="เชียงคำ" value="3" />
+        <Picker.Item label="ปง" value="2" />
+        <Picker.Item label="ภูซาง" value="7" />
+        <Picker.Item label="เชียงม่วน" value="4" />
       </Picker>
 
       

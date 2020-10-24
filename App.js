@@ -5,7 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SelectDistrictScreen from "./screens/selectdistrict";
 import HomeScreen from './screens/home';
-import MueangList from './screens/district/mueanglist'
+import MueangList from './screens/mueanglist'
+
 
 const Stack = createStackNavigator();
 
@@ -31,9 +32,7 @@ const Navigation = () => (
         component={HomeScreen}
         options={
           {
-            title:null,
-            headerTruncatedBackTitle: null
-        
+           title:null
           }
 }
         />
@@ -45,8 +44,13 @@ const Navigation = () => (
 
       
       <Stack.Screen
-        name="MueangList"
+        name= "District"
         component={MueangList}
+        options={
+          {
+            title:null
+          }
+}
       />
 
 
