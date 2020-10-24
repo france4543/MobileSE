@@ -1,13 +1,15 @@
-import Axios from "axios";
+
 import React,{useEffect,useState} from "react";
-import { View, StyleSheet,Text,Image, FlatList,ScrollView } from "react-native";
+import {StyleSheet, FlatList,ScrollView } from "react-native";
 import axios from 'axios'
+import { Card, Button } from 'react-native-elements'
 
 export default MueangList = ({navigation, route})  => {
  const [data,Setdata]= useState({})
-  axios.get(`http://192.168.1.155:8000/Place/${route.params.Amphoe}`).then((res)=>{   Setdata(res.data)    })
+  axios.get(`http://192.168.1.155:8000/Place/${route.params.Amphoe}`).then((res)=>{   
+  Setdata(res.data)    
+})
   
-
 
   return (
     
@@ -19,7 +21,17 @@ export default MueangList = ({navigation, route})  => {
                 horizontal={false}
                 renderItem={({item}) => {
                     return( 
-                    <Text>{item.Place_name}</Text>
+                      <Card>
+                      <Card.Title>{item.Place_name}</Card.Title>
+                      <Card.Divider/>
+                      <Card.Image source={{uri:item.PathImage}} style={styles.ImagePlace} />
+                      <Button
+                        buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0,marginTop:20}}
+                        title='ดูรายละเอียดสถานที่' />
+                    </Card>
+              
+                    
+                    
                     )
                        
                     
@@ -41,9 +53,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
 
   },
-  phusan:{
-    width:100,
-    height:200
+  ImagePlace:{
+    width:300,
+    height:300
   }
 
   });
