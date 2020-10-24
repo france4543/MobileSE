@@ -37,7 +37,12 @@ const SelectDistrict = ({navigation}) => {
       </Picker>
 
       
-      <TouchableOpacity>
+      <TouchableOpacity  onPress={() =>
+            		            navigation.navigate(
+                                'Detail',
+                                { id: item.id }
+                                )
+                            }>
       <Image
         style={styles.kwanphayao}
         source={{
