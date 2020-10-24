@@ -5,7 +5,7 @@ import { Card, Button } from 'react-native-elements'
 
 export default Detail = ({navigation, route})  => {
     const [data,Setdata]= useState({})
-     axios.get(`http://192.168.1.155:8000/Place/Travel/${route.params.id}`).then((res)=>{   
+     axios.get(`http://192.168.137.1:8000/Place/Travel/${route.params.id}`).then((res)=>{   
      Setdata(res.data)    
    })
    return (
@@ -14,7 +14,7 @@ export default Detail = ({navigation, route})  => {
                       <Card.Title>{data.Place_name}</Card.Title>
                       <Card.Divider/>
                       <Card.Image source={{uri:data.PathImage}} style={styles.ImagePlace} />
-                        <Text>{data.Place_content}</Text>
+                        <Text style={styles.Textcontent}>{data.Place_content}</Text>
                     </Card>
     </ScrollView>
     
@@ -27,8 +27,12 @@ const styles = StyleSheet.create({
 
   },
   ImagePlace:{
-    width:300,
+    minWidth:'100%',
     height:300
+  },
+  Textcontent:{
+    marginTop:10,
+    fontSize:14,
   }
 
   });
