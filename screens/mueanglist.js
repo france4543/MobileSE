@@ -7,7 +7,7 @@ import { Card, Button } from 'react-native-elements'
 
 export default MueangList = ({navigation, route})  => {
  const [data,Setdata]= useState({})
-  axios.get(`http://192.168.137.1:8000/Place/${route.params.Amphoe}`).then((res)=>{   
+  axios.get(`http://192.168.1.10:8000/Place/${route.params.Amphoe}`).then((res)=>{   
   Setdata(res.data)    
 })
   
