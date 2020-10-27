@@ -5,7 +5,7 @@ import { Card, Button } from 'react-native-elements'
 
 export default Detail = ({navigation, route})  => {
     const [data,Setdata]= useState({})
-     axios.get(`http://192.168.1.10:8000/Place/Travel/${route.params.id}`).then((res)=>{   
+     axios.get(`https://apimobileseup.herokuapp.com/Place/Travel/${route.params.id}`).then((res)=>{   
      Setdata(res.data)    
    })
    return (

@@ -8,7 +8,7 @@ import { Card, Button } from 'react-native-elements'
   const SelectDistrict = ({navigation}) => {
 
     const [data,Setdata]= useState({})
-    axios.get(`http://192.168.1.10:8000/Place/1`).then((res)=>{   
+    axios.get(`https://apimobileseup.herokuapp.com/Place/1`).then((res)=>{   
     Setdata(res.data)    
     })
 
