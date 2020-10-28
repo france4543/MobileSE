@@ -7,7 +7,7 @@ import SelectDistrictScreen from "./screens/selectdistrict";
 import HomeScreen from './screens/home';
 import MueangList from './screens/mueanglist';
 import Detail from './screens/Detail';
-
+import Trip from './screens/Trip'
 const Stack = createStackNavigator();
 
 
@@ -61,8 +61,10 @@ const Navigation = () => (
           }
 }
       />
-
-
+    <Stack.Screen
+      name="Trip"
+      component ={Trip}
+/>
       
     </Stack.Navigator>
   </NavigationContainer>

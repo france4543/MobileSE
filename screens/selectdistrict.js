@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet,Image,TouchableOpacity,Text, FlatList } from "react-native";
+import { ScrollView, StyleSheet,Image,View,Text, FlatList  } from "react-native";
 import { Picker } from '@react-native-community/picker';
 import axios from "axios"
-import { Card, Button } from 'react-native-elements'
+import { Card, Button, Icon } from 'react-native-elements'
 
  
   const SelectDistrict = ({navigation}) => {
@@ -22,6 +22,7 @@ import { Card, Button } from 'react-native-elements'
   return (
 
     <ScrollView contentContainerStyle={{  justifyContent:'center', alignItems:'center'  }} style={styles.container}>
+    <View style={{flexDirection:"row",alignItems:"center"}}>
       <Picker
         selectedValue={selectedValue}
         style={{ height: 50, width: 160 }}
@@ -43,6 +44,14 @@ import { Card, Button } from 'react-native-elements'
         <Picker.Item label="ภูซาง" value="7" />
         <Picker.Item label="เชียงม่วน" value="4" />
       </Picker>
+
+        <Icon name = 'gratipay' type = 'font-awesome' color = '#DE5B6D' 
+          onPress={() =>
+            		    navigation.navigate(
+                      'Trip')
+                            }
+        />
+      </View>
 
       <FlatList
                 data={data}
