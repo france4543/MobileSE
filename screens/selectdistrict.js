@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet,Image,TouchableOpacity,Text, FlatList } from "react-native";
+import { ScrollView, StyleSheet,Image,TouchableOpacity,Text, FlatList,View } from "react-native";
 import { Picker } from '@react-native-community/picker';
-import axios from "axios";
-import { Card, Button } from 'react-native-elements'
+import axios from "axios"
+import { Card, Button,Icon } from 'react-native-elements'
 
  
   const SelectDistrict = ({navigation}) => {
@@ -22,27 +22,40 @@ import { Card, Button } from 'react-native-elements'
   return (
 
     <ScrollView contentContainerStyle={{  justifyContent:'center', alignItems:'center'  }} style={styles.container}>
-      <Picker
-        selectedValue={selectedValue}
-        style={{ height: 50, width: 160 }}
-        onValueChange={(itemValue, itemIndex) => { 
-          setandgopage(itemValue)
-            
+      <View style={{ flexDirection: 'row', alignItems: 'center'}}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 160 }}
+          onValueChange={(itemValue, itemIndex) => { 
+            setandgopage(itemValue)
+              
+            }
           }
-        }
-      >
-      
-        <Picker.Item enabled={false} label="เลือกอำเภอ" value="selectam" />
-        <Picker.Item label="เมืองพะเยา" value="1" />
-        <Picker.Item label="ดอกคำใต้" value="6" />
-        <Picker.Item label="ภูกามยาว" value="9" />
-        <Picker.Item label="แม่ใจ" value="8" />
-        <Picker.Item label="จุน" value="5" />
-        <Picker.Item label="เชียงคำ" value="3" />
-        <Picker.Item label="ปง" value="2" />
-        <Picker.Item label="ภูซาง" value="7" />
-        <Picker.Item label="เชียงม่วน" value="4" />
-      </Picker>
+        >
+        
+          <Picker.Item enabled={false} label="เลือกอำเภอ" value="selectam" />
+          <Picker.Item label="เมืองพะเยา" value="1" />
+          <Picker.Item label="ดอกคำใต้" value="6" />
+          <Picker.Item label="ภูกามยาว" value="9" />
+          <Picker.Item label="แม่ใจ" value="8" />
+          <Picker.Item label="จุน" value="5" />
+          <Picker.Item label="เชียงคำ" value="3" />
+          <Picker.Item label="ปง" value="2" />
+          <Picker.Item label="ภูซาง" value="7" />
+          <Picker.Item label="เชียงม่วน" value="4" />
+        </Picker>
+        <Icon
+          name='gratipay'
+          type='font-awesome'
+          color='#EE2C6F'
+          size = '22'
+          onPress={() =>
+            navigation.navigate(
+                'Plantrip'
+                )
+            }
+          />
+      </View>
 
       <FlatList
                 data={data}

@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
-import {StyleSheet, FlatList,ScrollView, Text } from "react-native";
+import {StyleSheet, FlatList,ScrollView, Text,View } from "react-native";
 import axios from 'axios'
-import { Card, Button } from 'react-native-elements'
+import { Card, Button,Icon } from 'react-native-elements'
 
 export default Detail = ({navigation, route})  => {
     const [data,Setdata]= useState({})
@@ -11,7 +11,15 @@ export default Detail = ({navigation, route})  => {
    return (
 <ScrollView style={styles.container}>
                 <Card>
-                      <Card.Title>{data.Place_name}</Card.Title>
+                      <View style={{ flexDirection: 'row'}}>
+                      <Card.Title style={{marginRight:140,alignItems:'center'}}>{data.Place_name}</Card.Title>
+                      <Icon
+                          name='plus-square'
+                          type='font-awesome'
+
+                          color='#000000'
+                          />
+                      </View>
                       <Card.Divider/>
                       <Card.Image source={{uri:data.PathImage}} style={styles.ImagePlace} />
                         <Text style={styles.Textcontent}>{data.Place_content}</Text>
