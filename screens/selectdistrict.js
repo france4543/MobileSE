@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ScrollView, StyleSheet,Image,TouchableOpacity,Text, FlatList } from "react-native";
 import { Picker } from '@react-native-community/picker';
-import axios from "axios"
+import axios from "axios";
 import { Card, Button } from 'react-native-elements'
 
  
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 40,
+    
 
   },
   kwanphayao:{
