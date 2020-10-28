@@ -7,7 +7,7 @@ import SelectDistrictScreen from "./screens/selectdistrict";
 import HomeScreen from './screens/home';
 import MueangList from './screens/mueanglist';
 import Detail from './screens/Detail';
-import Plantrip from './screens/Plantrip';
+
 const Stack = createStackNavigator();
 
 
@@ -61,15 +61,7 @@ const Navigation = () => (
           }
 }
       />
-      <Stack.Screen
-        name= "Plantrip"
-        component={Plantrip}
-        options={
-          {
-            title:null
-          }
-}
-        />
+
 
       
     </Stack.Navigator>
