@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import { ScrollView, StyleSheet,Image,View,Text, FlatList  } from "react-native";
 import { Picker } from '@react-native-community/picker';
 import axios from "axios"
@@ -8,9 +8,12 @@ import { Card, Button, Icon } from 'react-native-elements'
   const SelectDistrict = ({navigation}) => {
 
     const [data,Setdata]= useState({})
-    axios.get(`https://apimobileseup.herokuapp.com/Place/1`).then((res)=>{   
+    useEffect(() => {
+      axios.get(`http://192.168.43.38:8000/Place/1`).then((res)=>{   
     Setdata(res.data)    
     })
+  }, [])
+    
 
     const [selectedValue, setSelectedValue] = useState("");
     const setandgopage = (value) => {
@@ -46,10 +49,7 @@ import { Card, Button, Icon } from 'react-native-elements'
       </Picker>
 
         <Icon name = 'gratipay' type = 'font-awesome' color = '#DE5B6D' 
-          onPress={() =>
-            		    navigation.navigate(
-                      'Trip')
-                            }
+          onPress={() => navigation.navigate('Trip') }
         />
       </View>
 
@@ -69,7 +69,7 @@ import { Card, Button, Icon } from 'react-native-elements'
                             }/>
                           <Text style={styles.TextSelectHome}>{item.Place_name}</Text>
                           <Text style={styles.TextSelectAmphoe}>อำเภอ :{item.Amphoe_data.Amphoe_name}</Text>
-                    </Card>
+                      </Card>
               
                     )
                        
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 40,
+    backgroundColor:'#AEB0E0'
 
   },
   kwanphayao:{

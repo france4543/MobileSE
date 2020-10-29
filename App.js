@@ -15,11 +15,11 @@ const Stack = createStackNavigator();
 const Navigation = () => (
   <NavigationContainer>
     <Stack.Navigator
-  initialRouteName="HomeScreen"
+  initialRouteName="phayao"
   screenOptions ={
     {
       headerStyle:{
-        backgroundColor:'white',
+        backgroundColor:'#979AE8',
         shadowOpacity: 0
       },
       headerTintColor:'black'
@@ -28,11 +28,11 @@ const Navigation = () => (
   }
   >
       <Stack.Screen
-        name="พะเยาเฮาม่วน"
+        name="phayao"
         component={HomeScreen}
         options={
           {
-           title:null
+           headerShown :false
           }
 }
         />
@@ -64,6 +64,11 @@ const Navigation = () => (
     <Stack.Screen
       name="Trip"
       component ={Trip}
+      options={
+          {
+            title:"PlanTrips"
+          }
+      }
 />
       
     </Stack.Navigator>
@@ -85,6 +90,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
+    
   },
 });

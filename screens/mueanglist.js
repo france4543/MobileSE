@@ -7,9 +7,12 @@ import { Card, Button } from 'react-native-elements'
 
 export default MueangList = ({navigation, route})  => {
  const [data,Setdata]= useState({})
-  axios.get(`https://apimobileseup.herokuapp.com/Place/${route.params.Amphoe}`).then((res)=>{   
+ useEffect(() => {
+  axios.get(`http://192.168.43.38:8000/Place/${route.params.Amphoe}`).then((res)=>{   
   Setdata(res.data)    
 })
+}, [])
+  
   
 
   return (
@@ -56,7 +59,7 @@ export default MueangList = ({navigation, route})  => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#AEB0E0',
 
   },
   ImagePlace:{
